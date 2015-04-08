@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<%= link_to "Editar", edit_post_path(@post) %>
+<%= link_to "Eliminar",@post,:method=>:delete %> 
+<%= link_to "volver", posts_path %>
+<br>
+<h1> <%= @post.title%> </h1>
+<input type="submit" value="Like" >
+
+
+<p> <%= @post.text%></p>
+
+<%= link_to "Agregar Comentarios", new_comment_path %>
+
+<h3>Comentarios</h3>
+<%= @post.comments.each do |comment|%>
+<p><%= comment.text%></p>
+<h5><%= comment.created_at.strftime("%b %d, %Y") %> </h5>
+<%end%>
+
+
+

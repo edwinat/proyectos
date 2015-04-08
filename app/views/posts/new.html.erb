@@ -1,0 +1,31 @@
+<h1>Nuevo post</h1>
+
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<%= form_for(@post) do |f| %>
+  <form>
+	Titulo del Post:
+	<br> 
+	<input type="text" name="post[title]" placeholder="Titulo">
+	<br>
+	<p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+    </p> 	
+	<br>
+	<input type="submit" value="Crear Post">
+
+  </form>
+  
+  <% end %>
+
+

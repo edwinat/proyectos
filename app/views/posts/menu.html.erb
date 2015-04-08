@@ -1,0 +1,12 @@
+<h1>Mi blog de Edwin de Posts</h1>
+
+<%= link_to "Ir Administrador", "/posts" %>
+
+<h2>Lista de Posts</h2>
+<% @posts.each do |post|%>
+  <h3><%= link_to post.title,post   %></h3>
+  <p><%= post.text %></p>
+  <h5>Fecha de Creacion: <%=  post.created_at.strftime("%b %d, %Y") %> </h5>
+  <input type="submit" value="Like" >
+<% end %>
+
